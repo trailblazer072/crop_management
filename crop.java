@@ -1,6 +1,6 @@
 import java.util.*;
 public class crop{
-    
+    int cropID;
 }
 public class farmer{
     
