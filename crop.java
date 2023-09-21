@@ -1,17 +1,28 @@
 import java.util.*;
-public class crop{
+ class Crop{
+    int cropID;
+    String cropName;
+    String cropType;
+    int quantity;
+     float pricePerUnit;
+    
     
 }
-public class farmer{
+abstract public class Farmer{
+abstract  String farmerID;
+  abstract String farmerName;
+abstract  int contactNumber;
+  
+}     class PurchaseOrder  extends Crop {
+    String orderID;
+    float totalPrice;
     
 }
-public class PurchaseOrder{
-    
+ class Invoice{
+   String invoiceID;
+     
 }
-public class Invoice{
-    
-}
-public class CropProcurementSystem{
+ class CropProcurementSystem{
     
 }
 public class main{
