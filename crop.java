@@ -1,4 +1,4 @@
-
+import java.util.*;
 interface Purchasable {
     String getName();
     double getPrice();
@@ -44,16 +44,15 @@ class Farmer extends Person {
 class Consumer extends Person {
 
     public Consumer(String name) {
-    
+        this.name=name;
     
     }
 
    
 
-    public void paymentDeatails() {
+    public void paymentDetails() {
         double totalAmount = 0;
         System.out.println("Receipt for " + getName() + ":");
-      
         System.out.println("Total: $" + totalAmount);
     }
 }
@@ -67,9 +66,6 @@ public class CropBuyingSystem {
         Farmer farmer2 = new Farmer();
 
         Consumer consumer = new Consumer();
-
         
-
-       
     }
 }
