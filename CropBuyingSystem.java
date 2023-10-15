@@ -22,7 +22,7 @@ class Crop implements Purchasable {
     }
 }
 
-// Class representing a Person
+// Class representing a Person1
 class Person {
     private String name;
 
