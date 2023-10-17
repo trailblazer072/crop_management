@@ -182,12 +182,13 @@ public class CropBuyingSystem {
                 int cropNo = scanner.nextInt();
         
                 System.out.print("Enter crop quantity (in units): ");
-                double cropQuantity = scanner.nextDouble();
+                int  cropQuantity = scanner.nextDouble();
 
                 switch (cropNo) {
                 case 1:
                     Wheat w = new Wheat();
                     break;
+                    double totalAmount=(cropQuantity*w.getPrice());
                     // save to file 
                     // agent name,agent id ,farmer name ,farmer Aadhar, <cropname> (w.getName),<crop quantity>(cropQuantity),
                     //  total amount (cropQuantity*w.getPrice), 
