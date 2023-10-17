@@ -5,20 +5,84 @@ interface Purchasable {
     double getPrice();
 }
 
-class Crop {
-    private String name;
-    private double pricePerKg;
-    public Crop(String name, double pricePerKg) {
-        this.name = name;
-        this.pricePerKg = pricePerKg;
-    }
+class Wheat {
+    private String name="Wheat";
+    private double pricePerUnit=800;
+    // public Wheat(String name, double pricePerKg) {
+    //     this.name = name;
+    //     this.pricePerKg = pricePerKg;
+    // }
 
     public String getName() {
         return name;
     }
 
     public double getPrice() {
-        return pricePerKg;
+        return pricePerUnit;
+    }
+}
+class Rice {
+    private String name="Rice";
+    private double pricePerUnit=960;
+    // public Wheat(String name, double pricePerKg) {
+    //     this.name = name;
+    //     this.pricePerKg = pricePerKg;
+    // }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return pricePerUnit;
+    }
+}
+class Bean {
+    private String name="Bean";
+    private double pricePerUnit=1080;
+    // public Wheat(String name, double pricePerKg) {
+    //     this.name = name;
+    //     this.pricePerKg = pricePerKg;
+    // }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return pricePerUnit;
+    }
+}
+class Maize {
+    private String name="Maize";
+    private double pricePerUnit=1440;
+    // public Wheat(String name, double pricePerKg) {
+    //     this.name = name;
+    //     this.pricePerKg = pricePerKg;
+    // }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return pricePerUnit;
+    }
+}
+class Soyabeen {
+    private String name="Soyabeen";
+    private double pricePerUnit=2140;
+    // public Wheat(String name, double pricePerKg) {
+    //     this.name = name;
+    //     this.pricePerKg = pricePerKg;
+    // }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return pricePerUnit;
     }
 }
 
@@ -78,15 +142,80 @@ public class CropBuyingSystem {
         double farmerAadharNo=sc.nextDouble();
         Farmer token =new Farmer(agentName, agentId, farmerName, farmerAadharNo);
         //taking input for crop to be sell
-        String [] cropsList = {"Wheat","Rice","Bean","Maize","Soyabeen"};
-        System.out.println("Choose which crop the farmer want to sell:");
+
+        String [] cropsList = {"1.Wheat","2.Rice","3.Bean","4.Maize","5.Soyabeen"};
+        String [] cropsPrice = {"800","960","1080","1440","2140"};
+
+        while (true) {
+            System.out.println("Crop Buying System: ");
+            System.out.println("1. Choose Crop the farmer want to sell:");
+            System.out.println("2. View Crops");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+            sc.nextLine(); // Consume the newline
+
+            switch (choice) {
+                case 1:
+                    purchaseCrop(sc);
+                    break;
+                case 2:
+                    System.out.println(Arrays.toString(cropsList));
+                    System.out.println(Arrays.toString(cropsPrice) + " (cost per unit in Rupees)");
+                    break;
+                case 3:
+                    System.out.println("Exiting the program.");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.🙏");
+            }
+            
+            
+        // String cropToSell = sc.next();
         
-        System.out.println(Arrays.toString(cropsList));
-        String cropToSell = sc.next();
-        Crop crop=new Crop();
 
         
+        // }
     }
+    private static void purchaseCrop(Scanner scanner) {
+                System.out.print("Enter crop no.: ");
+                int cropNo = scanner.nextInt();
+        
+                System.out.print("Enter crop quantity (in units): ");
+                double cropQuantity = scanner.nextDouble();
+
+                switch (cropNo) {
+                case 1:
+                    Wheat w = new Wheat();
+                    break;
+                    // save to file 
+                    // agent name,agent id ,farmer name ,farmer Aadhar, <cropname> (w.getName),<crop quantity>(cropQuantity),
+                    //  total amount (cropQuantity*w.getPrice), 
+                case 2:
+                    Rice r= new Rice();
+                    break;
+
+                case 3:
+                    Bean b= new Bean();
+                    break;
+                    
+                case 4:
+                    Maize m= new Maize();
+                    break;
+                    
+                case 5:
+                    Soyabeen s= new Soyabeen();
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.🙏");
+            }
+                
+                
+                System.out.println("Crop successfully.");
+            }
 }
+
+
 
 
