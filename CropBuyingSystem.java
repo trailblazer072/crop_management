@@ -182,7 +182,7 @@ public class CropBuyingSystem {
                 int cropNo = scanner.nextInt();
         
                 System.out.print("Enter crop quantity (in units): ");
-                int  cropQuantity = scanner.nextDouble();
+                double  cropQuantity = scanner.nextDouble();
 
                 switch (cropNo) {
                 case 1:
